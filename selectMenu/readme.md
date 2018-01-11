@@ -11,6 +11,7 @@
 
 ![基本样式](./img/base01.gif)
 ![基本功能](./img/base02.gif)
+![搜索功能](./img/base03.gif)
 
 ### 使用说明
 
