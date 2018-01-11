@@ -66,3 +66,15 @@ $.fn.selectMenu.changeOption('category', [{
   }
 ])
 ```
+
+4. 获取input框对应的选项值集合
+
+对于以下input
+
+```
+<input type="text" readonly="true" placeholder="可多选" class="rp-select-input form-control" id="category">
+```
+
+可以通过`$('#category').val()`来获取所有选项的文本内容集合
+
+可以通过`$.fn.selectMenu.getSelectValue('category')`来获取所有选项的值集合
