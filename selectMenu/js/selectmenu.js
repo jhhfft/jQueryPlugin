@@ -56,6 +56,13 @@
     }
   }
 
+  function displayAllItem() {
+    var checkItems = $('#tempChild > .select-body-cnt > ul > label > li')
+    var index = 0
+    for (index = 0; index < checkItems.length; index++) {
+      checkItems[index].style.display = 'block'
+    }
+  }
   // 创建多选框
   function createSelectDOM(labels) {
     var $container = $(`<ul class="check-box select-checkbox-list clearfix"></ul>`)
@@ -86,7 +93,7 @@
   }
 
   function bindEventListener() {
-  
+
     // 关闭子菜单
     $(".close-win").click(function () {
       $(".query-form-child").hide(700);
@@ -141,7 +148,7 @@
     // 点击输入框，弹出多选框
     $(".show-child").on('click', function (event) {
       if (selectDomArray[event.target.id].children().length === 0) return
-
+      displayAllItem()
       // 记录当前输入框
       currentInput = event.target
       currentHidden = currentInput.nextElementSibling
@@ -170,6 +177,7 @@
       return false;
     })
   }
+
   function selectAllByID(id) {
     var value = []
     var hiddenValue = []
@@ -181,7 +189,7 @@
     $('#' + id).val(value.join(','))
     $('#hidden' + id).val(hiddenValue.join(','))
   }
-  
+
   function cancleAllByID(id) {
     selectDomArray[id].find('.check-box-dept1').each(function () {
       this.checked = false
@@ -190,11 +198,11 @@
     $('#hidden' + id).val('')
   }
 
-  function selectItemInit(id, array){
+  function selectItemInit(id, array) {
     // 修改原有的input按钮 
     // <input type="text" readonly="true" placeholder="可多选" class="rp-select-input show-child form-control" id="component">
     // <input type="hidden" id="hidden-component">
-    var $ipt = $('#'+id)
+    var $ipt = $('#' + id)
     $ipt.addClass('show-child')
     $ipt.attr('readonly', 'true')
     var $hideIpt = $(`<input type="hidden" id="hidden-${id}">`)
@@ -203,17 +211,18 @@
     // 创建每项对应的DOM结构
     selectDomArray[id] = createSelectDOM(array)
   }
-  
-  function changeOption(id, result){
+
+  function changeOption(id, result) {
     // 修改对应的DOM内容
     selectDomArray[id] = createSelectDOM(result)
   }
-  function getSelectValue(id){
-    return $('#hidden-'+id).val()
+
+  function getSelectValue(id) {
+    return $('#hidden-' + id).val()
   }
-  $.fn.selectMenu = function (options) {  // options是一个对象，每个属性对应一个数组
+  $.fn.selectMenu = function (options) { // options是一个对象，每个属性对应一个数组
     createSelectMenu()
-    for(var i in options){
+    for (var i in options) {
       selectItemInit(i, options[i])
     }
     bindEventListener()
