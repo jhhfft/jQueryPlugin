@@ -1,0 +1,97 @@
+.query-form-child {
+  top: 0px;
+  position: absolute;
+  border: 1px solid #ddddde;
+  z-index: 999;
+  background: #fff;
+  width: 535px;
+  height: 236px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.175);
+  padding: 0px;
+  display: none;
+}
+
+.query-form-child .select-input-cnt {
+  background: #efefef;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 12px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.query-form-child input[type="text"] {
+  width: 330px !important;
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 4px;
+  font-size: 14px;
+  color: #666666;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  vertical-align: middle;
+}
+
+.query-form-child .select-body-cnt {
+  max-height: 154px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.query-form-child .select-checkbox-list {
+  padding: 3px 13px;
+}
+
+.query-form-child .select-checkbox-list li {
+  padding-left: 2px;
+  display: inline-block;
+  font-size: 14px;
+  color: #565656;
+  height: 30px;
+  line-height: 30px;
+  width: 120px;
+  float: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.query-form-child .select-checkbox-list label {
+  font-weight: normal !important;
+}
+
+.query-form-child .select-action-cnt {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: #efefef;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 12px;
+  border-top: 1px solid #e9e9e9;
+}
+
+.query-form-child .select-action-left {
+  position: absolute;
+  margin: 0 !important;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 200px;
+}
+
+.query-form-child .select-action-right {
+  position: absolute;
+  margin: 0 !important;
+  top: 50%;
+  right: 10px;
+  transform: translate(0, -50%);
+  width: 120px;
+}
+
+.input-group input[readonly=true] {
+  background: #fff;
+}
